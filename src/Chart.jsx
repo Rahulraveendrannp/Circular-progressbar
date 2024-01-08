@@ -1,10 +1,7 @@
-import React from "react";
-// Import react-circular-progressbar module and styles
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const Chart = () => {
-  const value = 190;
+const Chart = ({value,O1,O2,O3,maxValue}) => {
   return (
     <div
       style={{ padding: "40px 40px 40px 40px", transform: "rotate(-135deg)" }}
@@ -22,15 +19,15 @@ const Chart = () => {
                 fx="50%"
                 fy="10%"
               >
-                <stop offset="10%" stopColor="#06741C" />
-                <stop offset="60%" stopColor="#B0A718" />
-                <stop offset="100%" stopColor="#BB1606" />
+                <stop offset={O1} stopColor="#06741C" />
+                <stop offset={O2} stopColor="#B0A718" />
+                <stop offset={O3} stopColor="#BB1606" />
               </radialGradient>
             </defs>
           </svg>
           <CircularProgressbar
             value={value}
-            maxValue={200}
+            maxValue={maxValue}
             circleRatio={0.75}
             styles={{
               path: {
@@ -51,7 +48,7 @@ const Chart = () => {
           <span style={{ fontSize: "25px", fontWeight: "bold", color: "#ABABAB" }}>0</span>
         </div>
         <div style={{ position: "absolute", top: "0%", left: "50%", transform: "translate(470%, 120%)" ,rotate:"136deg"}}>
-          <span style={{ fontSize: "25px", fontWeight: "bold", color: "#ABABAB" }}>200</span>
+          <span style={{ fontSize: "25px", fontWeight: "bold", color: "#ABABAB" }}>{maxValue}</span>
         </div>
         </div>
       )}

@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Chart from './Chart'
 
@@ -8,7 +5,7 @@ function App() {
 
 
   return (
-    <Chart/>
+    <Chart value={180} O1={"10%"} O2={"60%"} O3={"100%"} maxValue={200}/>
   )
 }
 
